@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Cycles - Custom Motorcycles & Expert Service</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?w=1600') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #d62828;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-dark {
+            background: #2b2d42;
+            color: white;
+        }
+
+        .section-light {
+            background: white;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #e63946;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e63946;
+        }
+
+        .featured-bikes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .bike-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .bike-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .bike-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .bike-info {
+            padding: 20px;
+        }
+
+        .bike-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: #2b2d42;
+        }
+
+        .bike-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        .about {
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            text-align: center;
+        }
+
+        .badge-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .badge-text {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            padding: 20px;
+        }
+
+        .contact-item h3 {
+            color: #e63946;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: #e63946;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>CG Cycles</h1>
+            <p>Custom Motorcycles, Expert Maintenance & Quality Used Bikes</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-light about">
+        <h2>Built on Passion & Experience</h2>
+        <p>At CG Cycles, we don't just work on motorcycles—we live and breathe them. Every custom build, every restoration, and every service is handled with the care and attention your bike deserves.</p>
+        <p>Whether you're looking for a complete custom build, expert maintenance, or a quality used motorcycle, we bring years of experience and a commitment to excellence to every project.</p>
+        
+        <div class="trust-badges">
+            <div class="badge">
+                <div class="badge-icon">🔧</div>
+                <div class="badge-text">Expert Service</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">⚡</div>
+                <div class="badge-text">Quality Parts</div>
+            </div>
+            <div class="badge">
+                <div class="badge-icon">✓</div>
+                <div class="badge-text">Trusted Builds</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-dark">
+        <h2>What We Do</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Custom Builds</h3>
+                <p>From concept to completion, we create one-of-a-kind motorcycles tailored to your vision. Every detail matters, and we work closely with you to bring your dream bike to life.</p>
+            </div>
+            <div class="service-card">
+                <h3>Expert Maintenance</h3>
+                <p>Keep your ride running at peak performance. Our comprehensive maintenance services ensure your motorcycle stays reliable, safe, and ready for the road.</p>
+            </div>
+            <div class="service-card">
+                <h3>Quality Used Bikes</h3>
+                <p>Looking for your next ride? We offer carefully selected, fully inspected used motorcycles. Each bike is serviced and ready to roll.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Bikes Section -->
+    <section class="section section-light">
+        <h2>Current Inventory</h2>
+        <div class="featured-bikes">
+            <div class="bike-card">
+                <div class="bike-image">🏍️</div>
+                <div class="bike-info">
+                    <h3>Classic Restoration</h3>
+                    <p>Fully restored vintage bike, runs like new. Perfect for collectors and enthusiasts.</p>
+                    <div class="price">$4,200</div>
+                </div>
+            </div>
+            <div class="bike-card">
+                <div class="bike-image">🏍️</div>
+                <div class="bike-info">
+                    <h3>Custom Cruiser</h3>
+                    <p>One-of-a-kind custom build with premium components and stunning finish.</p>
+                    <div class="price">Contact for pricing</div>
+                </div>
+            </div>
+            <div class="bike-card">
+                <div class="bike-image">🏍️</div>
+                <div class="bike-info">
+                    <h3>Sport Bike Ready</h3>
+                    <p>High-performance machine, meticulously maintained and track-ready.</p>
+                    <div class="price">Contact for pricing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-dark contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Ready to start your custom build or have questions about our services? Reach out today.</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="mailto:info@cgcycles.com">info@cgcycles.com</a>
+            </div>
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <a href="tel:5551234567">(555) 123-4567</a>
+            </div>
+            <div class="contact-item">
+                <h3>Location</h3>
+                <p>Your Town, USA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CG Cycles. Built for riders, by riders.</p>
+    </footer>
+</body>
+</html>
