@@ -120,7 +120,8 @@
         .placeholder {
             width: 100%;
             height: 300px;
-            background: #ddd;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -128,6 +129,15 @@
             color: #666;
             border-radius: 5px;
             margin-bottom: 10px;
+        }
+
+        .bike-image {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            margin-bottom: 15px;
         }
 
         .work-description {
@@ -187,6 +197,8 @@
                 <li>Electrical</li>
                 <li>Mechanical</li>
                 <li>Full Service</li>
+                <li>3D Printing</li>
+                <li>Welding</li>
             </ul>
         </section>
 
@@ -196,11 +208,13 @@
             
             <div class="bike">
                 <h3>2005 Suzuki DRZ125</h3>
+                <div class="bike-image" style="background-image: url('PXL_20251004_182243078.jpg');"></div>
                 <div class="price">$1,500</div>
             </div>
 
             <div class="bike">
                 <h3>2003 Kawasaki Vulcan 1600 Classic</h3>
+                <div class="bike-image" style="background-image: url('PXL_20250811_153015078.jpg');"></div>
                 <div class="bike-details">37,000 miles - All maintenance done</div>
                 <div class="price">$4,200</div>
             </div>
@@ -212,7 +226,7 @@
             <div class="custom-work">
                 <div class="work-item">
                     <h3>Welding</h3>
-                    <div class="placeholder">[Photo placeholder - welding work]</div>
+                    <div class="placeholder" style="background-image: url('PXL_20251010_190748123.jpg');"></div>
                     <p class="work-description">Expert welding services for custom builds and repairs</p>
                 </div>
 
